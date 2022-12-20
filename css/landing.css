@@ -2,7 +2,7 @@
   --title-font: "Unbounded", Helvetica, Verdana, sans-serif;
   --text-font: "Inter", Helvetica, Verdana, sans-serif;
 
-  --bg-color: #000000;
+  --bg-color: #101015;
   --text-color: #ffffff;
   --link-color: #f272b6;
 
@@ -58,6 +58,13 @@ a:hover {
 video {
   max-width: 100%;
   border-radius: 32px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  video {
+    height: 327px;
+  }
 }
 
 .button {
@@ -86,6 +93,20 @@ video {
   color: var(--text-color);
 }
 
+.background-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.0064) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 64px;
+}
+
 .landing-section {
   display: flex;
   flex-direction: column;
@@ -98,7 +119,16 @@ video {
   box-sizing: border-box;
 }
 
-@media (max-width: 375px) {
+.landeng-section-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 72%;
+  margin: auto;
+}
+
+@media (max-width: 430px) {
   .landing-section {
     padding: 45px 20px;
   }
@@ -108,14 +138,52 @@ video {
   border-top: var(--outline-border);
   height: 1px;
   width: 100%;
+  margin: auto;
 }
 
 .landing-section-row {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.landing-section-row-link {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .landing-section-row-link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.landing-section-row-left-to-right {
   display: flex;
   gap: 50px;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+}
+
+.landing-signer-5-download {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .landing-signer-5-download {
+    flex-direction: column;
+  }
 }
 
 .landing-section-column {
@@ -125,7 +193,7 @@ video {
 }
 
 .landing-section-cell-40 {
-  width: 40%;
+  width: 36%;
 }
 
 .landing-section-cell-50 {
@@ -160,6 +228,19 @@ video {
   .landing-section-cell-40 {
     width: 100%;
   }
+
+  .landing-section-row-left-to-right {
+    flex-direction: column;
+  }
+
+  .landing-section-row-left-to-right :nth-child(1) {
+    order: 1;
+  }
+
+  .landing-section-row-left-to-right :nth-child(2) {
+    order: 2;
+  }
+
 }
 
 .landing-section-cell-center {
@@ -180,7 +261,7 @@ video {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 5px 10px 3px;
+  padding: 12px 16px;
 
   position: fixed;
   width: 95%;
@@ -199,8 +280,24 @@ video {
 }
 
 .landing-menu-logo-image {
-  width: 135px;
-  min-width: 135px;
+  width: 30px;
+  min-width: 30px;
+  display: block;
+  vertical-align: bottom;
+}
+
+.landing-menu-full-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  text-decoration: none;
+}
+
+.landing-logo-title {
+  font-family: var(--title-font);
+  font-size: 24px;
 }
 
 .landing-menu-items {
@@ -248,9 +345,9 @@ video {
   }
 
   .landing-menu-logo-image {
-    width: 105px;
-    min-width: 105px;
-    height: 24px;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
   }
 
   .landing-menu-items {
@@ -260,17 +357,22 @@ video {
     font-weight: 400;
     font-size: 21px;
     line-height: 25px;
-    padding: 24px 0;
-    margin-left: 5px;
+    padding: 24px 0 8px 0;
   }
 
   .landing-menu-items-item {
     opacity: 1;
   }
+
+  .landing-logo-title {
+    font-family: var(--title-font);
+    font-size: 18px;
+  }
 }
 
+
 .landing-menu-opened {
-  padding: 10px;
+  padding: 12px 16px;
   border-radius: 16px;
   justify-content: flex-start;
 }
@@ -286,6 +388,7 @@ video {
 .landing-menu-opened .landing-menu-close {
   display: block;
 }
+
 
 .landing-title-big {
   font-family: var(--title-font);
@@ -358,7 +461,8 @@ video {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 430px) {
+
   .landing-title-big,
   .landing-title-medium,
   .landing-title-small {
@@ -376,14 +480,30 @@ video {
 }
 
 .landing-header-gradient {
-  background: radial-gradient(
-    87.36% 63.57% at 76.67% 66.07%,
-    #e6007a 0%,
-    #101015 98.96%
-  );
+  background: radial-gradient(24.86% 50.95% at 63.06% 29.05%,
+      rgba(230, 0, 122, 0.15) 0%,
+      rgba(16, 16, 21, 0.15) 100%);
   border-radius: 0px 0px 24px 24px;
   font-family: var(--title-font);
   z-index: -1;
+}
+
+@media (max-width: 768px) {
+
+  .landing-header-gradient {
+    background: radial-gradient(46.72% 44.01% at 50% 45.87%, 
+    rgba(230, 0, 122, 0.15) 0%, 
+    rgba(16, 16, 21, 0.15) 100%);
+  }
+}
+
+@media (max-width: 430px) {
+
+  .landing-header-gradient {
+    background: radial-gradient(44.53% 30.44% at 50.13% 34.72%, 
+    rgba(230, 0, 122, 0.15) 0%,
+    rgba(16, 16, 21, 0.15) 90.64%);
+  }
 }
 
 .landing-main-subtitle {
@@ -425,8 +545,8 @@ video {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: stretch;
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0px 0px 24px rgba(230, 0, 122, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.32), 0px 0px 24px rgba(242, 114, 182, 0.6);
   border-radius: 48px;
   height: 64px;
   margin-top: 30px;
@@ -474,6 +594,10 @@ video {
   .coming-soon-form-button-long {
     display: none;
   }
+
+  .landeng-section-center {
+    width: 100%;
+  }
 }
 
 .image-placeholder {
@@ -501,6 +625,12 @@ video {
   margin-top: 20px;
 }
 
+@media (max-width: 430px) {
+  .metadata-portal-image {
+    height: 32px;
+  }
+}
+
 .landing-section-setting-up {
   padding-bottom: 0;
 }
@@ -512,9 +642,11 @@ video {
   border-radius: 24px;
 }
 
-@media (max-width: 375px) {
+
+
+@media (max-width: 430px) {
   .landing-section-download {
-    padding: 24px;
+    padding: 32px 24px;
   }
 }
 
@@ -526,12 +658,28 @@ video {
   gap: 16px;
 }
 
-.landing-feature {
+/* .landing-feature {
   display: flex;
   flex-direction: column;
   position: relative;
   padding-bottom: 32px;
   padding-left: 40px;
+}
+*/
+
+.landing-feature {
+  display: flex;
+  flex-direction: row;
+  padding: 12px 0px;
+  gap: 16px;
+}
+
+.landing-feature-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 4px;
+  gap: 4px;
 }
 
 .landing-feature-name {
@@ -545,11 +693,12 @@ video {
   opacity: 0.48;
 }
 
-.landing-feature-icon {
+/* .landing-feature-icon {
   position: absolute;
   top: 5px;
   left: 5px;
 }
+*/
 
 .banana-split {
   display: flex;
@@ -596,6 +745,19 @@ video {
   }
 }
 
+@media (max-width: 430px) {
+  .hot-wallet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    gap: 16px;
+    width: 327px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+  }
+}
+
 .article-list {
   display: flex;
   flex-wrap: wrap;
@@ -624,7 +786,7 @@ video {
   background: rgba(255, 255, 255, 0.05);
 }
 
-@media (max-width: 375px) {
+@media (max-width: 430px) {
   .article {
     width: 155px;
     height: 155px;
@@ -653,8 +815,10 @@ video {
 .landing-footer {
   max-width: var(--max-content-width);
   margin: 0 auto;
-  padding: 40px 24px 100px;
+  padding: 40px 24px;
 }
+
+
 
 .landing-footer-media {
   display: flex;
@@ -679,12 +843,23 @@ video {
   min-width: 300px;
 }
 
+@media (max-width: 768px) {
+  .landing-footer-media-social {
+    justify-content: start;
+  }
+}
+
 .landing-footer-bottom {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap-reverse;
   padding-top: 30px;
-  padding-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+  .landing-footer-bottom {
+    flex-direction: column;
+  }
 }
 
 .landing-footer-links {
@@ -694,6 +869,12 @@ video {
   gap: 20px;
   padding-bottom: 20px;
   justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .landing-footer-links {
+    justify-content: start;
+  }
 }
 
 .landing-footer-links a {
@@ -723,9 +904,9 @@ video {
 }
 
 .supported-networks-logo {
-  width: 72px;
-  min-width: 72px;
-  height: 72px;
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
 }
 
 @media (max-width: 768px) {
