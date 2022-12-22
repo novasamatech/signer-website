@@ -52,7 +52,7 @@ a {
 }
 
 a:hover {
-  color: #f272b6;
+  color: #ffffff;
 }
 
 video {
@@ -317,6 +317,10 @@ video {
   opacity: 0.69;
 }
 
+.landing-menu-items-item:hover {
+  opacity: 1;
+}
+
 .landing-menu-burger,
 .landing-menu-close {
   display: none;
@@ -480,9 +484,7 @@ video {
 }
 
 .landing-header-gradient {
-  background: radial-gradient(24.86% 50.95% at 63.06% 29.05%,
-      rgba(230, 0, 122, 0.15) 0%,
-      rgba(16, 16, 21, 0.15) 100%);
+  background: radial-gradient(19.9% 40.77% at 70.42% 45.54%, rgba(230, 0, 122, 0.24) 0%, rgba(16, 16, 21, 0.24) 100%);
   border-radius: 0px 0px 24px 24px;
   font-family: var(--title-font);
   z-index: -1;
@@ -491,18 +493,16 @@ video {
 @media (max-width: 768px) {
 
   .landing-header-gradient {
-    background: radial-gradient(46.72% 44.01% at 50% 45.87%, 
-    rgba(230, 0, 122, 0.15) 0%, 
-    rgba(16, 16, 21, 0.15) 100%);
+    background: radial-gradient(46.72% 44.01% at 50% 45.87%,
+        rgba(230, 0, 122, 0.32) 0%,
+        rgba(16, 16, 21, 0.32) 100%);
   }
 }
 
 @media (max-width: 430px) {
 
   .landing-header-gradient {
-    background: radial-gradient(44.53% 30.44% at 50.13% 34.72%, 
-    rgba(230, 0, 122, 0.15) 0%,
-    rgba(16, 16, 21, 0.15) 90.64%);
+    background: radial-gradient(50.33% 44.17% at 50.13% 40.49%, rgba(230, 0, 122, 0.32) 0%, rgba(16, 16, 21, 0.32) 100%);
   }
 }
 
@@ -763,8 +763,15 @@ video {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  gap: 15px;
+  gap: 16px;
 }
+
+@media (max-width: 430px) {
+  .article-list {
+    gap: 8px;
+  }
+}
+
 
 .article {
   display: flex;
@@ -792,7 +799,7 @@ video {
     height: 155px;
     font-size: 14px;
     line-height: 20px;
-    padding: 15px;
+    padding: 16px;
   }
 
   .article .icon {
@@ -879,11 +886,13 @@ video {
 
 .landing-footer-links a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.48);
+  color: var(--text-color);
+  opacity: 0.69;
 }
 
 .landing-footer-links a:hover {
-  color: rgba(255, 255, 255, 0.48);
+  
+  opacity: 1;
 }
 
 .landing-footer-polkadot-logo {
@@ -891,16 +900,26 @@ video {
   padding-bottom: 20px;
 }
 
-.supported-networks {
+.marquee {
+  --gap: 32px;
+  display: flex;
   overflow: hidden;
-  position: relative;
+  gap: var(--gap);
+  -webkit-mask-image: linear-gradient(to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );  
+}
+
+.marquee-content {
+  flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 26px;
-  align-content: flex-start;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  min-width: 100%;
 }
 
 .supported-networks-logo {
@@ -909,10 +928,22 @@ video {
   height: 80px;
 }
 
-@media (max-width: 768px) {
-  .supported-networks {
-    gap: 20px;
+@keyframes marquee-content {
+  from {
+    transform: translateX(0);
   }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+
+.enable-animation .marquee-content {
+  animation: marquee-content 30s linear infinite;
+}
+
+
+@media (max-width: 768px) {
 
   .supported-networks-logo {
     width: 64px;
