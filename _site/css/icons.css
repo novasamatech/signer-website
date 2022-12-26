@@ -4,6 +4,12 @@
   vertical-align: middle;
 }
 
+.chevron-right {
+  height: 32px;
+  width: 32px;
+	background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.9401 8L11.0601 9.88L17.1667 16L11.0601 22.12L12.9401 24L20.9401 16L12.9401 8Z' fill='white' fill-opacity='0.48'/%3E%3C/svg%3E");
+}
+
 .icon-margin-left {
   margin-left: 5px;
 }

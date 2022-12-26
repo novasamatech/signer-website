@@ -14,10 +14,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400&display=swap');
 
 @font-face {
-  font-family: 'Unbounded', cursive;
-  /* font-family: "Unbounded";
-  src: url("/fonts/Unbounded-Variable.woff2") format("woff2"),
-    url("/fonts/Unbounded-Variable.ttf") format("ttf"); */    
+  font-family: "Unbounded", cursive;
+  font-display: swap;
 }
 
 @font-face {
@@ -792,9 +790,24 @@ video {
   gap: 16px;
 }
 
+.article-name {
+  
+}
+
 @media (max-width: 430px) {
   .article-list {
     gap: 8px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width:768p) {
+  .article-list {
+    flex-direction: column;
+  }
+
+  .article-name {
+    flex-grow: 1;
   }
 }
 
@@ -819,24 +832,39 @@ video {
   background: rgba(255, 255, 255, 0.05);
 }
 
-@media (max-width: 430px) {
+.chevron-right {
+  display: none;
+}
+
+@media (max-width: 768px) {
   .article {
-    width: 155px;
-    height: 155px;
-    font-size: 14px;
-    line-height: 20px;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    line-height: 24px;
     padding: 16px;
   }
 
-  .article .icon {
-    transform: scale(50%);
+  .article-icon {
+    display: none;
+  }
+
+  .chevron-right {
+    display: block;
   }
 }
+
+
+
 
 .landing-section-feedback {
   justify-content: center;
   text-align: center;
   gap: 0;
+  padding-bottom: 40px;
 }
 
 .landing-section-feedback-buttons {
