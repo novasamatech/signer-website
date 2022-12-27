@@ -612,7 +612,10 @@ video {
 
 @media (max-width: 768px) {
   .coming-soon-form-button-short {
-    display: block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
   }
 
   .coming-soon-form-button-long {
@@ -621,6 +624,8 @@ video {
 
   .landeng-section-center {
     width: 100%;
+    justify-content: flex-start;
+    text-align: start;
   }
 }
 
@@ -857,6 +862,18 @@ video {
   }
 }
 
+@media (max-width: 430px) {
+  .chevron-right {
+    display: block;
+    position: absolute;
+    right: 8%;
+  }
+
+  .article-name {
+    margin-right: 32px;
+  }
+
+}
 
 
 
