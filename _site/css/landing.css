@@ -633,6 +633,11 @@ video {
   margin-top: 8px;
 }
 
+.hot-wallet-list {
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .hot-wallet {
   display: flex;
   flex-direction: row;
@@ -640,12 +645,13 @@ video {
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  width: 50%;
+  width: 49%;
   min-width: 450px;
   border: var(--outline-border);
   border-radius: 48px;
   padding: 7px 10px;
   font-size: 24px;
+  box-sizing: border-box;
 }
 
 .hot-wallet-logo {
