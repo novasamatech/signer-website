@@ -843,11 +843,13 @@ video {
   gap: 20px;
   padding-bottom: 20px;
   justify-content: flex-end;
+  margin-top: -45px;
 }
 
 @media (max-width: 768px) {
   .landing-footer-links {
     justify-content: start;
+    margin-top: -10px;
   }
 }
 
@@ -926,5 +928,18 @@ video {
     width: 64px;
     min-width: 64px;
     height: 64px;
+  }
+}
+
+.novasama-icon {
+  display: block;
+  margin: 25px 0 0 0;
+  float: 0;
+}
+
+@media (max-width: 768px) {
+  .novasama-icon {
+    visibility: hidden;
+    height: 50px;
   }
 }
